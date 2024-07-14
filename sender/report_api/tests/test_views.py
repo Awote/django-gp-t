@@ -25,7 +25,7 @@ class TestReportView:
 
     @pytest.mark.asyncio
     async def test_post_report_success(self, api_client):
-        file_path = os.path.join("sender_file","tests","test_files","testing_data.xlsx")
+        file_path = os.path.join("report_api","tests","test_files","testing_data.xlsx")
 
         file = open(file_path, "rb")
         url = reverse("report")

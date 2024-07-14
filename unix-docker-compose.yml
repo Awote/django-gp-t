@@ -16,7 +16,7 @@ services:
       - ${DB_PORT}:5432
     volumes:
     # Change volum path if you need
-      - /Users/leam/gazprom/postgres-data:/var/lib/postgresql/data
+      - ./postgres-data:/var/lib/postgresql/data
     networks:
       - gazprom-net
 
