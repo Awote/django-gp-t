@@ -2,7 +2,7 @@ import os
 import pytest
 from django.urls import reverse
 from adrf.test import AsyncAPIClient
-from sender_file.models import XlsxReport
+from report_api.models import XlsxReport
 
 
 @pytest.mark.django_db

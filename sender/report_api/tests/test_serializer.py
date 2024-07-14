@@ -1,5 +1,5 @@
 import pytest
-from sender_file.serializers import CsvFileSerializer, XlsxReportQuery
+from report_api.serializers import CsvFileSerializer, XlsxReportQuery
 
 @pytest.mark.django_db
 def test_csv_file_serializer():

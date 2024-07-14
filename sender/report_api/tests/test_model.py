@@ -1,5 +1,5 @@
 import pytest
-from sender_file.models import XlsxReport
+from report_api.models import XlsxReport
 
 @pytest.mark.django_db
 def test_create_xlsx_report():
