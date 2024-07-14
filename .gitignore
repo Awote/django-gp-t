@@ -85,7 +85,6 @@ target/
 __pycache__/
 local_settings.py
 
-.env
 db.sqlite3
 
 venv
@@ -213,7 +212,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
