@@ -277,13 +277,11 @@ exec "$@"
     cd your-project
     ```
 
-2. **Создайте и настройте файл `.env`:**
+2. **Файл `.env`:**
 
     В корневом каталоге проекта имеется файл `.env` при необходимости его можно редактировать:
-
     ```env
       PROD=True
-      SERVER_KEY='django-insecure-ok1rro7&!ma*%2p!)+8mv4=cpxn14ezx(-$e1=4eec7&h^*2wy'
       SERVER_PORT=55550
 
       DB_NAME=GAZPROM
@@ -298,12 +296,14 @@ exec "$@"
     Используйте Docker Compose для сборки и запуска контейнеров:
 
     ```bash
-    docker-compose up --build
+    docker-compose --file unix-docker-compose.yml --env-file .env up -d
     ```
 
 4. **Проверка доступности приложения:**
 
     После успешного развертывания приложение будет доступно по адресу `http://localhost:55550`.
+    Документация API будет доступна по адресу `http://localhost:55550/swagger/` 
+
 
 ### Заключение
 
