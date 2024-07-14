@@ -1,0 +1,42 @@
+version: '3.7'
+
+
+
+services:
+
+  postgres:
+    image: postgres:14-alpine
+    container_name: gazprom-pg
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+    # Change volum path if you need
+      - /Users/leam/gazprom/postgres-data:/var/lib/postgresql/data
+    networks:
+      - gazprom-net
+
+  backend:
+    build: 
+      context: ./sender
+      dockerfile: Dockerfile
+    container_name: gazprom-back
+    command:  "uvicorn sender.asgi:application --host 0.0.0.0 --port 8000 --reload"
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${SERVER_PORT}:8000
+    networks:
+      - gazprom-net
+    depends_on:
+      - postgres
+
+
+networks:
+  gazprom-net:
+    driver: bridge
