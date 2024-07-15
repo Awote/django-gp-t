@@ -47,7 +47,7 @@
 ├─── .env
 ├─── .gitignore
 ├─── Readme.md
-└─── unix-docker-compose.yml
+└─── docker-compose.yml
 ```
 
 ## Описание решения
@@ -296,7 +296,7 @@ exec "$@"
     Используйте Docker Compose для сборки и запуска контейнеров:
 
     ```bash
-    docker-compose --file unix-docker-compose.yml --env-file .env up -d
+    docker-compose --env-file .env up -d
     ```
 
 4. **Проверка доступности приложения:**
